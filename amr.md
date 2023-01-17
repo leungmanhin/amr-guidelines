@@ -2086,12 +2086,12 @@ relation `:cause` is replaced by `cause-01`. Instead of `x :cause y`, we have
 `x :ARG1-of (c / cause-01 :ARG0 y)`.
 
 ```lisp
-AMR without reification:        AMR with reification:
-(l / leave-11                   (l / leave-11
-   :ARG0 (g / girl)                :ARG0 (g / girl)
-   :cause (a / arrive-01           :ARG1-of (c / cause-01
-             :ARG1 (b / boy)))                 :ARG0 (a / arrive-01
-                                                        :ARG1 (b / boy))))
+AMR with reification:
+(l / leave-11
+   :ARG0 (g / girl)
+   :ARG1-of (c / cause-01
+               :ARG0 (a / arrive-01
+                        :ARG1 (b / boy))))
 ```
 
 > The girl left because the boy arrived.
