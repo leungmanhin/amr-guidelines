@@ -3940,6 +3940,7 @@ These cycles magically disappear upon reification:
                      :ARG0 p 
                      :ARG1 (q / quality))))
 ```
+> a procedure to ensure quality
 
 **Different textual ways to encode a graph**
 
@@ -3947,11 +3948,20 @@ Finally, we have two different ways of encoding the same propositional content
 (“the boy likes to be believed”):
 
 ```lisp
-(l / like-01                    (l / like-01
-   :ARG0 (b / boy)                 :ARG0 (b / boy
-   :ARG1 (b2 / believe-01                   :ARG1-of (b2 / believe-01))
-             :ARG1 b))             :ARG1 b2)
+(l / like-01
+   :ARG0 (b / boy)
+   :ARG1 (b2 / believe-01
+             :ARG1 b))
 ```
+> the boy likes to be believed
+
+```lisp
+(l / like-01
+   :ARG0 (b / boy
+            :ARG1-of (b2 / believe-01))
+   :ARG1 b2)
+```
+> the boy likes to be believed
 
 Sensible people will prefer the version on the left, though both versions relate
 the same conjunction of propositional triples.
