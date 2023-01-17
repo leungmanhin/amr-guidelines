@@ -1130,9 +1130,8 @@ not introduce implicit *concepts*, e.g., `full` below:
 
 
 ```lisp
-(h / hopeful-03        NOT: (f / full
-   :ARG1 (g / girl))          :poss (h / hope)
-                              :ARG1 (g / girl))
+(h / hopeful-03
+   :ARG1 (g / girl))
 ```
 
 > the hopeful girl
@@ -1284,8 +1283,8 @@ make maximal use of use of OntoNotes predicate frames, instead of defaulting to
 
 
 ```lisp
-(o / organization                 NOT:  (m / maker
-   :ARG0-of (m / make-01                   :mod (c / chip))
+(o / organization
+   :ARG0-of (m / make-01
                :ARG1 (c / chip)))
 ```
 
@@ -1303,14 +1302,14 @@ make maximal use of use of OntoNotes predicate frames, instead of defaulting to
 ```lisp
 (p / person
    :ARG0-of (i / invest-01
-               :ARG2 (b / bond)))    
+               :ARG2 (b / bond)))
 ```
 
 > bond investor 
 
 ```lisp
-(p / person                        NOT:  (i / investor
-   :ARG0-of (i / invest-01                  :mod (s / small))      “I can’t see you!”
+(p / person
+   :ARG0-of (i / invest-01
                :mod (s / small)))
 ```
 
@@ -1330,15 +1329,13 @@ someone who treasures:
 
 
 ```lisp
-(t  / treasurer)           NOT:   (p / person
-                                     :ARG0-of (t / treasure-01))
+(t  / treasurer)
 ```
 
 > treasurer
 
 ```lisp
-(p / president)            NOT:   (p / person
-                                     :ARG0-of (p2 / preside-01))
+(p / president)
 ```
 
 > president
@@ -1349,9 +1346,9 @@ hard worker” just means the boy works hard:
 
 
 ```lisp
-(w / work-01               NOT:   (b / boy
-   :ARG0 (b / boy)                   :ARG0-of (w / work-01
-   :manner (h / hard-02))                       :manner (h / hard-02)))
+(w / work-01
+   :ARG0 (b / boy)
+   :manner (h / hard-02))
 ```
 
 > the boy is a hard worker
@@ -1396,9 +1393,9 @@ predicates:
 
 
 ```lisp
-(a / realize-01            NOT:  (a / aware
-   :ARG0 (s / soldier)              :ARG1 (s / soldier)
-   :ARG1 (b / battle))              :prep-of (b / battle))
+(a / realize-01
+   :ARG0 (s / soldier)
+   :ARG1 (b / battle))
 ```
 
 > The soldier was aware of the battle.
@@ -1543,9 +1540,8 @@ English is a wily opponent though.  If you own a taxable fund, getting taxed is
 more than just a possibility, my friend:
 
 ```lisp
-(f / fund                   NOT: (f / fund
-   :ARG3-of (t / tax-01))           :ARG3-of (t / tax-01
-                                                :ARG1-of (p / possible-01)))
+(f / fund
+   :ARG3-of (t / tax-01))
 ```
 
 > a taxable fund
@@ -1893,10 +1889,10 @@ role, e.g.:
 
 
 ```lisp
-(p / provide-01            NOT:  (p / provide-01
-   :ARG0 (b / boy)                  :ARG0 (b / boy)
-   :ARG1 (c / chocolate)            :ARG1 (c / chocolate)
-   :ARG2 (g / girl))                :beneficiary (g / girl))
+(p / provide-01
+   :ARG0 (b / boy)
+   :ARG1 (c / chocolate)
+   :ARG2 (g / girl))
 ```
 
 > The boy provided chocolate to the girl.
@@ -1908,16 +1904,16 @@ involving creation events.  We tend to put them on the event, rather than on the
 created thing:
 
 ```lisp
-(b / build-01                        NOT:  (b / build-01
-  :ARG0 (t / they)                            :ARG0 (t / they)
-  :ARG1 (b2 / bridge)                         :ARG1 (b2 / bridge :location …))
-  :location (s / state 
-              :wiki "Maryland" 
-              :name (n / name :op1 "Maryland"))                                   
+(b / build-01
+  :ARG0 (t / they)
+  :ARG1 (b2 / bridge)
+  :location (s / state
+              :wiki "Maryland"
+              :name (n / name :op1 "Maryland"))
   :time (d / date-entity :month 12))
 ```
 
-> They built the bridge in Maryland in December. 
+> They built the bridge in Maryland in December.
 >
 > The bridge was built by them in Maryland in December.
 
@@ -1927,7 +1923,7 @@ Here are more non-core roles:
 
 ```lisp
 (e / engine
-   :part-of (c / car))                                                                                    
+   :part-of (c / car))
 ```
 
 > the engine of the car
