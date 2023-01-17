@@ -1218,20 +1218,6 @@ OntoNotes:
 By using `destroy-01`, we fully exploit the semantic frames in OntoNotes, which
 are most developed for English verbs.
 
-We never say:
-
-```lisp
-(d / destruction
-   …)
-```
-
-or
-
-
-```lisp
-(d / destruction-01
-   …)
-```
 
 Older versions of OntoNotes have noun predicate frames like `destruction-01`,
 but we do not want AMRs to contain both `destroy-01` and `destruction-01`. 
