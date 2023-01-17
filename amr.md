@@ -2206,14 +2206,7 @@ sentence may receive two different AMRs.  Either of the following AMRs could
 reasonable represent “The girl left because the boy arrived”, with neither being
 canonical:
 
-```lisp
-AMR without reification:        AMR with reification:
-(l / leave                      (l / leave
-   :ARG0 (g / girl)                :ARG0 (g / girl)
-   :cause (a / arrive              :ARG1-of (c / cause-01
-             :ARG0 (b / boy)))                 :ARG0 (a / arrive
-                                               :ARG0 (b / boy))))
-```
+
 
 Furthermore, we might reasonably tend to use the first AMR for “The girl left
 because the boy arrived”, but prefer the second one for “The girl left, due to
